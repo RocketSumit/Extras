@@ -118,17 +118,17 @@ Note: All notes are corresponding to C++11 compiler.
 
 ### Anatomy of C++ program
 
-```
+```cpp
 #include <iostream>
 ```
 This is a preprocessor derivative to include the header file. 
 
-```
+```cpp
 using namespace std
 ```
 To look for function in the std namespace if not found in current file.
 
-```
+```cpp
 int main (int argc, char ** argv){
     printf("Hello, Sumit!");
     return 0;
@@ -143,7 +143,7 @@ Note: `printf`, `puts` are faster and simple than `cout`.
 * Statements ends with `;`, which means a single statements could be layed over multiple lines unless terminated with `;`.
 * An expression is anything that returns an value whether that value is used or not. Expression can be a part of the statement or entire statement.
 
-```
+```cpp
 int x;
 x = 43;
 printf("x is %d\n", x);
@@ -184,7 +184,7 @@ Identifiers beginning with `_` are private and those beginning with  `__` ( two 
 * Variables should be defined before they are used. 
 * Initialize the variables while defining them. Undefined variables are dangerous thing.
 * Qualifier/modifiers change the behavior of variables in various ways. It becomes  part of the type.
-```
+```cpp
   const int i = 2;
 ```
 Here, const is the qualifier of type int, making sure that the value of i cannot changed once initialized i.e read-only variable.
@@ -192,7 +192,7 @@ Here, const is the qualifier of type int, making sure that the value of i cannot
 ### Pointers
 
 The very useful, common and dangerous datatype in C++. `*` is also called de-reference and `&` as reference operator. 
-```
+```cpp
 int *ip; // define a pointer 
 ip = &x; // store the address of variable x in the pointer
 y = *ip; // assignment of value stored by x to y
@@ -200,7 +200,7 @@ y = *ip; // assignment of value stored by x to y
 
 ### References
 
-```
+```cpp
 int &y = x;
 y = 45; // changes the value of x
 ```
@@ -211,7 +211,7 @@ Reference has to be initialized with some address.
 - An array is fixed size container for elements of common type.
 - Index starts from 0.
   
-```
+```cpp
 int ia[5];
 ia[0] = 1;
 *ia = 1; //same as above
@@ -221,18 +221,18 @@ ia[0] = 1;
 *(++ip) = 4;  
 ```
 New way of initialization in C++11.
-```
+```cpp
 int ia[5] = {1, 2, 3, 4. 5}; 
 ```
 
 - String is an special case of array of characters stored contiguously and can be indexed using pointer as well.
 
-```
+```cpp
 char s[] = {'s', 't', 'r', 'i', 'n', 'g', 0 } // null terminated string
 char s[] = "string";
 ```
 
-```
+```cpp
 char s[] = "string";
 // Old C++
 for (char *cp; *cp; ++cp){
@@ -247,7 +247,7 @@ for (char c: s){
 
 ### Conditionals
 * If, else if, else
-```
+```cpp
 if () {
 
 } 
@@ -259,14 +259,15 @@ else {
 }
 ```
 * Ternary operator
-```
+
+```cpp
 x > y ? x : y;    
 ```
 ### Branching conditional
 
 Take proper care to use the correct type of constant.
 
-```
+```cpp
 switch(x){
   case constant:
     expression;
@@ -280,13 +281,13 @@ switch(x){
 ```
 ### Looping
 While loop
-```
+```cpp
 while (i < 5>){
   expression;
 }
 ```
 Do while loop
-```
+```cpp
 do {
   expression;
 }while(i > 5);
@@ -294,7 +295,7 @@ do {
 
 For loop for iteration
 
-```
+```cpp
 for (int i = 0; i < 5; ++i){
   expression;
 }
@@ -307,7 +308,7 @@ for (char * cp; *cp; ++cp){
 ```
 
 Range based for loop in C++11
-```
+```cpp
 int a[] = {1, 2, 3};
 
 for (int i : a){
@@ -318,7 +319,7 @@ for (int i : a){
 ### Using stdout
 
 cout is a class in C++ that works very differntly from printf and puts.
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -335,7 +336,7 @@ Cout need a whole lot of STL library to compile as it overload the bitwise left 
 ### Overview of functions
 * All code in C++ happens inside functions. Functions are the basis of C++ and class methods.
 * Function signatures differentiate functions in C++. 
-  ```
+  ```cpp
     long volume (long a, long b, long c){
       return a*b*c;
     }
@@ -345,7 +346,7 @@ Cout need a whole lot of STL library to compile as it overload the bitwise left 
   ```
 * Two ways of calling a function - call by value and call by reference. In call by value a copy of argument is passed whereas the in call by reference, the address of the variable is passed. Call by reference is useful for passing large objects/values as parameters.
 
-  ```
+  ```cpp
   // Explicit using pointers - used in C
   int a = 1;
   void f(int* p){
@@ -353,7 +354,7 @@ Cout need a whole lot of STL library to compile as it overload the bitwise left 
   }
   f(&a);
   ```
-  ```
+  ```cpp
   // Implicit using references - more often used in C++
   int a = 1;
   void f(int & p){
@@ -364,7 +365,7 @@ Cout need a whole lot of STL library to compile as it overload the bitwise left 
 
 - Paranthesis of function call are called the function call operator.
 - Function should be declared before it is called.
-```
+```cpp
   void func(); // function declaration
   
   int main(){
@@ -392,7 +393,7 @@ void func(const int & i){
 - static variables not stored on the stack and it's persistent for the life of the entire process.
 - Used for storing large variables anything larger than a few scalar variables.
 
-```
+```cpp
 void func(){
   static int i = 2; // i will remain 24 for next function call
   i = 24;
@@ -400,7 +401,7 @@ void func(){
 ```
 ### Returning values from a function
 - return values are copied and returned on stack.
-```
+```cpp
 // to return as reference, it should be a static variable
 const string & func(){
   static string s = "This is a static string";
@@ -415,7 +416,7 @@ int main (){
 
 Pointers to function - useful in jump arrays or tables, CGI or web services.
 
-```
+```cpp
 void func(){
   puts("this is func()");
 }
@@ -434,7 +435,7 @@ int main(){
 - Functions in C are distinguished by names.
 - Functions in C++ should not only be distinguised by return type.
   
-```
+```cpp
 double volume(double a){
 
 }
@@ -451,7 +452,7 @@ double volume(double a, double b){
     
 ### Defining a variable number of arguments
 
-```
+```cpp
 #include <cstdarg> // header for variadic variables
 
 // first argument is total number of parameters to be averages and rest are the doubles for avg
@@ -471,7 +472,7 @@ double average (const int count, ...){
 ```
 ### Recursion
 Function calling itself
-```
+```cpp
 unsigned long int factorial(unsigned long int n){
   if (n < 2) return 1;
   return factorial (n - 1) * n;
@@ -510,7 +511,7 @@ Optimizer --> Linker;
 - They are not actually constant but act as a text replacement.
 - They are defined using preprocessor directives, starting with #
   - Example - ONE is replaced by 1 in the entire source code before the compiler gets to it. 
-  ```
+  ```cpp
   #define ONE 1  
 
   // Notice there is no semicolon, because this is not c++ language, it is preprocessor language.
@@ -522,7 +523,7 @@ Optimizer --> Linker;
 - Two ways to include files - 1. `#include < ....h >`, 2. `#include"...h"`. Angle brackets are used for system level header files while double quotes are used for project level header files.
 
 ### Conditional Compilation
-```
+```cpp
 #if (if)
 #ifdef (if defined)
 #ifndef (if not defined)
@@ -533,7 +534,7 @@ Optimizer --> Linker;
 #if !defined (MACRO) same as #ifndef
 ```
 Example - 
-```
+```cpp
 #ifdef FOO
 #define NUMBER 47
 #else
@@ -543,7 +544,7 @@ Example -
 - Conditional compilation directives are commonly used for separate versions of code, for debug, or supporting different target environments.
 
 ### Parameterized macros
-```
+```cpp
 #define MAX(a,b) (a > b ? a : b)
 
 int main(){
@@ -568,7 +569,7 @@ Macros not working as expected. In the below example increment function is evalu
 ### Including files only once
 - Common solution is include guard.
 - Other common non-standard solution is using pragma, supported by most modern compilers but may be fooled by smybolic links.
-```
+```cpp
 // Inside the header file
 #pragma once  
 ```
@@ -700,7 +701,7 @@ Others include -
   Unsigned types are available with unsigned modifier.
 
 Specific width integer types - important when using same code on different systems.
-```
+```cpp
 #include <cstdint>
 
 Signed  | Unsigned  | 
@@ -711,7 +712,7 @@ int32_t | unit32_t  |
 nit64_t | unit64_t  |
 
 ```
-```
+```cpp
 long int x = 42L; // long
 long int x = 42LL; // long long
 long int x = 0223; // octal
@@ -724,7 +725,7 @@ long int x = 0b10001; // c++14 only
 * double
 * long double
 
-```
+```cpp
 float f = 500;
 float f = 5e2; //scientific
 ```
@@ -732,7 +733,7 @@ In most modern systems, float has a precision of 7 digits, and double 16 digits.
 
 ### Characters and string
 Fundamental strings are array of characters teminated by null character. 
-```
+```cpp
 char s[] = "string" "string1" "string2";
 ```
 ### Escape sequences
@@ -822,7 +823,7 @@ In C, we had to define macro for null pointer. But in C++, we have unambiguous n
 
 ### Compound operators
 These are more efficient than there simple equivalent operators.
-```
+```cpp
 x = x + y; // two copy operations needed
 x += y; // one copy operation needed
 ```
@@ -842,13 +843,13 @@ Used for performing bitwise operations on integer values.
     
 ### Ternary operators
 Requires three operands, cannot be overloaded.
-```
+```cpp
 x > y ? "yes" : "no"
 ```
 
 ### Sizeof
 Return the size of variables in bytes.
-```
+```cpp
 #include <cstdio>
 int main(){
   int x = 2;
@@ -1003,7 +1004,7 @@ Not all containers supports iterators and not all containers support the same ty
 - Fast and lean but do not support random access.
 
 ### Pairs
-```
+```cpp
 #include <utility>
 
 pair<int, string> p = {5, "string hello"};
