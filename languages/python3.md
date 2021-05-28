@@ -1,5 +1,12 @@
 # Python 3
-
+- [Python 3](#python-3)
+  - [Input](#input)
+  - [String Formatting](#string-formatting)
+  - [Cartesian Product](#cartesian-product)
+  - [List compression](#list-compression)
+  - [String manipulation](#string-manipulation)
+  - [String validators](#string-validators)
+  - [Text alignment](#text-alignment)
 ## Input
 
 ```python
