@@ -1,7 +1,11 @@
 # tools
 Tips, tricks, notes and cheatsheets about the tools I use.
 
-## Editor
+## System Config
+- [Ubuntu](./system-config/ubuntu/ubuntu_setup.md)
+  - [.zshrc](./system-config/ubuntu/oh-my-zsh/.zshrc)
+  - [neovim](./system-config/ubuntu/neovim/README.md)
+## Cheatsheets
  - [vim](./editors/vim_commands.md)
 
 ## Languages
