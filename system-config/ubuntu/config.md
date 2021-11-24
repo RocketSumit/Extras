@@ -95,7 +95,23 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 Install fira code font : [link](https://github.com/tonsky/FiraCode)
 Manually install the font by download the latest source release and installing individually in `ttf` folder.
 
-## Neovim nightly
+## Neovim from appimage (recommended)
+
+Remember to export the app image to expose it globally.
+
+[Link](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+
+```
+./nvim.appimage --appimage-extract
+./squashfs-root/AppRun --version
+
+# Optional: exposing nvim globally
+mv squashfs-root / 
+ln -s /squashfs-root/AppRun /usr/bin/nvim
+nvim
+```
+
+## Neovim nightly (from ppa)
 ```
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
