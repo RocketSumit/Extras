@@ -1,18 +1,30 @@
+# Ubuntu System Setup
+
+Important applications and modules to improve the workflow. Tested on Ubuntu
+18.04 and 20.04.
 
 ## Dark themes
+
 Go to settings -> appearance and select dark theme if available.
 
 ## Enable nighlight
-Go to settings -> Display -> Night light and configure as per your needs. Looking at screen at night distrubs the circadian rhythm and consequently quality of quantity of sleep.
+
+Go to settings -> Display -> Night light and configure as per your needs.
+Looking at screen at night distrubs the circadian rhythm and consequently
+quality of quantity of sleep.
 
 ## Configuring software and updates
+
 Open software and updates, and check the options as shown below. 
-1. In ubuntu software, check canocical-supported, community maintained, proprietary drivers and software rectricted options.
+1. In ubuntu software, check canocical-supported, community maintained,
+   proprietary drivers and software rectricted options.
 2. In other software, check canonical partners.
 
 ## Fixing sound issue
-If the headphone jack is producing sound, then
-edit the file `/usr/share/pulseaudio/alsa-mixer/paths/analog-output-lineout.conf` and make the following changes. Restart required to see the changes.
+
+If the headphone jack is producing sound, then edit the file
+`/usr/share/pulseaudio/alsa-mixer/paths/analog-output-lineout.conf` and make the following changes. Restart required to
+see the changes.
 
 ```
 [Element Desktop Speaker]
@@ -43,6 +55,11 @@ sudo apt-get install terminator
     always_split_with_profile = True
     in the config file ~/.config/terminator/config
     ```
+## Tmux
+
+```
+sudo apt install tmux
+```
 
 ## Essential Softwares
 1. VLC player - `sudo apt install vlc`
