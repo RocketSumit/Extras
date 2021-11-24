@@ -55,11 +55,44 @@ sudo apt-get install terminator
     always_split_with_profile = True
     in the config file ~/.config/terminator/config
     ```
+* To add a nord theme, make sure your `~/.config/terminator/config` looks like the following or follow instruction [here](https://github.com/arcticicestudio/nord-terminator).
+        ```
+        [global_config]
+      title_transmit_fg_color = "#2E3440"
+      title_transmit_bg_color = "#88C0D0"
+      title_receive_fg_color = "#2E3440"
+      title_receive_bg_color = "#8FBCBB"
+      title_inactive_fg_color = "#D8DEE9"
+      title_inactive_bg_color = "#4C566A"
+    [keybindings]
+    [profiles]
+      [[default]]
+        cursor_color = "#aaaaaa"
+        font = Fira Code weight=453 12
+        use_system_font = False
+      [[nord]]
+        background_color = "#2e3440"
+        cursor_color = "#D8DEE9"
+        foreground_color = "#d8dee9"
+        palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
+    [layouts]
+      [[default]]
+        [[[window0]]]
+          type = Window
+          parent = ""
+        [[[child1]]]
+          type = Terminal
+          parent = window0
+          profile = nord
+    [plugins]
+    ```
+    
 ## Tmux
 
 ```
 sudo apt install tmux
 ```
+If it doesn't start with zsh shell, try `set-option -g default-shell /bin/zsh` in `~/.tmux.conf`.
 
 ## Essential Softwares
 1. VLC player - `sudo apt install vlc`
