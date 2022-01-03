@@ -86,28 +86,24 @@ sudo apt-get install terminator
           profile = nord
     [plugins]
     ```
+* Currently using gruvbox dark theme.
     
-## Tmux
-
-```
-sudo apt install tmux
-```
-If it doesn't start with zsh shell, try `set-option -g default-shell /bin/zsh` in `~/.tmux.conf`.
-
 ## Essential Softwares
+
 1. VLC player - `sudo apt install vlc`
 2. Todoist - `sudo snap install todoist`
 3. Visual Studio code
 4. Gitkraken
 
-
 ## Important packages
+
 ```
 sudo apt install curl git-core zsh fonts-powerline python3-dev nodejs
 sudo apt-get install tree
 ```
 
 ## Oh-my-zsh
+
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
@@ -128,28 +124,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 Install fira code font : [link](https://github.com/tonsky/FiraCode)
 Manually install the font by download the latest source release and installing individually in `ttf` folder.
 
-## Neovim from appimage (recommended)
-
-Remember to export the app image to expose it globally.
-
-[Link](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-
-```
-./nvim.appimage --appimage-extract
-./squashfs-root/AppRun --version
-
-# Optional: exposing nvim globally
-mv squashfs-root / 
-ln -s /squashfs-root/AppRun /usr/bin/nvim
-nvim
-```
-
-## Neovim nightly (from ppa)
-```
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update
-sudo apt-get install neovim
-```
 
 ## Conda - python package manager 
 1. Install miniconda

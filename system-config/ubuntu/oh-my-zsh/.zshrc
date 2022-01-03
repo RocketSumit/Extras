@@ -1,14 +1,15 @@
-# If you come from bash you might have to change your $PATH.
+# If you cme from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/rocketsumit/.oh-my-zsh"
-
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="avit"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,11 +71,14 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-syntax-highlighting zsh-autosuggestions pip python vi-mode colorize)
+plugins=(git git-flow colored-man-pages zsh-syntax-highlighting zsh-autosuggestions pip python vi-mode colorize tmux)
+
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+bindkey '^ ' autosuggest-accept
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -105,27 +109,43 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-# Alias pip to pip3
-alias pip=pip3
-alias jl=jupyter\ lab
+alias zshconfig="nvim ~/.zshrc"
+alias sauce="source ~/.zshrc"
+
+alias d='dirs -v | head -10'
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/rocketsumit/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/rocketsumit/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/rocketsumit/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/rocketsumit/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
+__conda_setup="$('/home/rocketsumit/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/rocketsumit/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rocketsumit/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/rocketsumit/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
-source /opt/ros/noetic/setup.zsh
+# source /opt/ros/noetic/setup.zsh
 # Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
+export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
 export PATH=$HOME/android-studio/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
+# export PATH=$HOME/.local/bin:$PATH
+# export PATH=$HOME/MyApplications/pycharm-community-2021.1.2/bin:$PATH # for pycharm
+# export PYTHONPATH=/opt/ros/noetic/lib/python3/dist-packages
+conda activate pysim
+source ~/catkin_ws/devel/setup.zsh
+
